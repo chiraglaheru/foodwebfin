@@ -1,9 +1,25 @@
-[phpextensions]
-gd = true
-fileinfo = true
-mbstring = true
-pdo = true
-tokenizer = true
-xml = true
-curl = true
-openssl = true
+[phases.setup]
+apt = [
+  "libpng-dev",
+  "libjpeg-dev",
+  "libfreetype6-dev",
+  "libwebp-dev"
+]
+
+[build]
+extensions = [
+  "gd",
+  "ctype",
+  "curl",
+  "dom",
+  "fileinfo",
+  "filter",
+  "hash",
+  "mbstring",
+  "openssl",
+  "pcre",
+  "pdo",
+  "session",
+  "tokenizer",
+  "xml"
+]
