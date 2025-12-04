@@ -1,0 +1,9 @@
+[phpextensions]
+gd = true
+fileinfo = true
+mbstring = true
+pdo = true
+tokenizer = true
+xml = true
+curl = true
+openssl = true
