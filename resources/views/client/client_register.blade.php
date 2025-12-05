@@ -107,7 +107,7 @@
     </div>
 </form>
 
-                                <div class="mt-4 pt-2 text-center">
+                                {{-- <div class="mt-4 pt-2 text-center">
                                     <div class="signin-other-title">
                                         <h5 class="font-size-14 mb-3 text-muted fw-medium">- Sign in with -</h5>
                                     </div>
@@ -132,16 +132,16 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> --}}
 
-                                <div class="mt-5 text-center">
+                                {{-- <div class="mt-5 text-center">
                                     <p class="text-muted mb-0">Don't have an account ? <a href="auth-register.html"
                                             class="text-primary fw-semibold"> Signup now </a> </p>
-                                </div>
+                                </div> --}}
                             </div>
-                            <div class="mt-4 mt-md-5 text-center">
+                            {{-- <div class="mt-4 mt-md-5 text-center">
                                 <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> EasyLearing   . Crafted with <i class="mdi mdi-heart text-danger"></i> by EasyLearing</p>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -174,27 +174,22 @@
                 <button type="button" data-bs-target="#reviewcarouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <!-- end carouselIndicators -->
-            <div class="carousel-inner">
+           <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="testi-contain text-white">
                         <i class="bx bxs-quote-alt-left text-success display-6"></i>
 
-                        <h4 class="mt-4 fw-medium lh-base text-white">“I feel confident
-                            imposing change
-                            on myself. It's a lot more progressing fun than looking back.
-                            That's why
-                            I ultricies enim
-                            at malesuada nibh diam on tortor neaded to throw curve balls.”
+                        <h4 class="mt-4 fw-medium lh-base text-white">“A great dining experience isn’t created by food alone — it’s crafted by the people who prepare it, the passion behind every detail, and the care in how it is delivered. When all of these come together, a simple meal becomes a memory.”
                         </h4>
                         <div class="mt-4 pt-3 pb-5">
                             <div class="d-flex align-items-start">
                                 <div class="flex-shrink-0">
-                                    <img src="{{ asset('backend/assets/images/users/avatar-1.jpg') }}" class="avatar-md img-fluid rounded-circle" alt="...">
+                                    <img src="{{ asset('assets/images/users/avatar-1.jpg') }}" class="avatar-md img-fluid rounded-circle" alt="...">
                                 </div>
                                 <div class="flex-grow-1 ms-3 mb-4">
                                     <h5 class="font-size-18 text-white">Richard Drews
                                     </h5>
-                                    <p class="mb-0 text-white-50">Web Designer</p>
+                                    <p class="mb-0 text-white-50">Culinary Expert</p>
                                 </div>
                             </div>
                         </div>
@@ -205,21 +200,16 @@
                     <div class="testi-contain text-white">
                         <i class="bx bxs-quote-alt-left text-success display-6"></i>
 
-                        <h4 class="mt-4 fw-medium lh-base text-white">“Our task must be to
-                            free ourselves by widening our circle of compassion to embrace
-                            all living
-                            creatures and
-                            the whole of quis consectetur nunc sit amet semper justo. nature
-                            and its beauty.”</h4>
+                        <h4 class="mt-4 fw-medium lh-base text-white">“Behind every successful service lies a team that believes in consistency, quality, and heart. It’s not just about satisfying hunger — it’s about creating an experience that makes people feel valued, understood, and welcomed.”</h4>
                         <div class="mt-4 pt-3 pb-5">
                             <div class="d-flex align-items-start">
                                 <div class="flex-shrink-0">
-                                    <img src="{{ asset('backend/assets/images/users/avatar-1.jpg') }}" class="avatar-md img-fluid rounded-circle" alt="...">
+                                    <img src="{{ asset('assets/images/users/avatar-2.jpg') }}" class="avatar-md img-fluid rounded-circle" alt="...">
                                 </div>
                                 <div class="flex-grow-1 ms-3 mb-4">
                                     <h5 class="font-size-18 text-white">Rosanna French
                                     </h5>
-                                    <p class="mb-0 text-white-50">Web Developer</p>
+                                    <p class="mb-0 text-white-50">Hospitality Head</p>
                                 </div>
                             </div>
                         </div>
@@ -230,15 +220,10 @@
                     <div class="testi-contain text-white">
                         <i class="bx bxs-quote-alt-left text-success display-6"></i>
 
-                        <h4 class="mt-4 fw-medium lh-base text-white">“I've learned that
-                            people will forget what you said, people will forget what you
-                            did,
-                            but people will never forget
-                            how donec in efficitur lectus, nec lobortis metus you made them
-                            feel.”</h4>
+                        <h4 class="mt-4 fw-medium lh-base text-white">“What people remember isn’t the menu or the branding — it’s how the experience made them feel. A kind gesture, a well-timed smile, or a perfectly delivered meal can transform an ordinary day into something special”</h4>
                         <div class="mt-4 pt-3 pb-5">
                             <div class="d-flex align-items-start">
-                                <img src="{{ asset('backend/assets/images/users/avatar-1.jpg') }}" class="avatar-md img-fluid rounded-circle" alt="...">
+                                <img src="{{ asset('assets/images/users/avatar-3.jpg') }}" class="avatar-md img-fluid rounded-circle" alt="...">
                                 <div class="flex-1 ms-3 mb-4">
                                     <h5 class="font-size-18 text-white">Ilse R. Eaton</h5>
                                     <p class="mb-0 text-white-50">Manager

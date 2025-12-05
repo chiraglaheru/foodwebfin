@@ -25,9 +25,12 @@
                          </div>
                       </div>
                       <div class="col-lg-7 col-md-7 col-sm-12 form-group">
-                         <input type="text" placeholder="Enter your Dine-in location" class="form-control form-control-lg">
-                         <a class="locate-me" href="#"><i class="icofont-ui-pointer"></i> Locate Me</a>
-                      </div>
+    <input id="location-input" type="text" placeholder="Enter your Dine-in location" class="form-control form-control-lg">
+    <a class="locate-me" href="#" onclick="getUserLocation(event)">
+        <i class="icofont-ui-pointer"></i> Locate Me
+    </a>
+</div>
+
                       <div class="col-lg-2 col-md-2 col-sm-12 form-group">
                          <a href="listing.html" class="btn btn-primary btn-block btn-lg btn-gradient">Search</a>
                          <!--<button type="submit" class="btn btn-primary btn-block btn-lg btn-gradient">Search</button>-->
@@ -60,3 +63,32 @@
        </div>
     </div>
  </section>
+
+ <script>
+function getUserLocation(event) {
+    event.preventDefault();
+
+    if (!navigator.geolocation) {
+        alert("Geolocation is not supported by your browser.");
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(success, error);
+
+    function success(position) {
+        let lat = position.coords.latitude;
+        let lng = position.coords.longitude;
+
+        // Insert located coordinates into the input field
+        document.getElementById("location-input").value = `Lat: ${lat}, Lng: ${lng}`;
+
+        // OPTIONAL: You can convert coordinates → address using Google Maps API
+        // But that requires a paid API key so skipping for now.
+    }
+
+    function error() {
+        alert("Unable to retrieve your location.");
+    }
+}
+</script>
+

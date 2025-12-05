@@ -78,9 +78,14 @@ class CartController extends Controller
       //End Method
 
     public function ApplyCoupon(Request $request){
-    $coupon = Coupon::where('coupon_name',$request->coupon)
-        ->where('validity','>=',Carbon::now()->format('Y-m-d'))
-        ->first();
+
+    // FIX: clean input (remove spaces + lowercase)
+    $enteredCoupon = strtolower(trim($request->coupon));
+
+    // FIX: search coupon properly
+    $coupon = Coupon::whereRaw('LOWER(TRIM(coupon_name)) = ?', [$enteredCoupon])
+                    ->whereDate('validity', '>=', Carbon::today())
+                    ->first();
 
     $cart = session()->get('cart',[]);
     $totalAmount = 0;
@@ -92,6 +97,7 @@ class CartController extends Controller
         $cdid = $pd->client_id;
         array_push($clientIds,$cdid);
     }
+
 
     if ($coupon) {
 

@@ -655,4 +655,44 @@ $coupons = App\Models\Coupon::where('client_id',$client->id)->where('status','1'
    })
  </script>
 
+ <script>
+function ApplyCoupon(){
+    var coupon = $('#coupon_name').val();
+
+    $.ajax({
+        url: "{{ url('/apply-coupon') }}",
+        type: "POST",
+        data: {
+            _token: "{{ csrf_token() }}",
+            coupon: coupon   // ← FIXED
+        },
+        success: function(data){
+            if(data.error){
+                Swal.fire({
+                    icon: 'error',
+                    title: data.error,
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    title: data.success,
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
+                location.reload();
+            }
+        }
+    });
+}
+
+</script>
+
+
 @endsection
