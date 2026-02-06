@@ -11,7 +11,7 @@
                 <a class="nav-link" href="{{ route('dashboard') }}">Home <span class="sr-only">(current)</span></a>
              </li>
              <li class="nav-item">
-                <a class="nav-link" href="offers.html"><i class="icofont-sale-discount"></i> Offers <span class="badge badge-danger">New</span></a>
+                {{-- <a class="nav-link" href="offers.html"><i class="icofont-sale-discount"></i> Offers <span class="badge badge-danger">New</span></a> --}}
              </li>
              <li class="nav-item dropdown">
                 <a class="nav-link" href="{{ route('list.restaurant') }}" role="button"  aria-haspopup="true" aria-expanded="false">

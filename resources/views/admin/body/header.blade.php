@@ -27,12 +27,12 @@
             </button>
 
             <!-- App Search-->
-            <form class="app-search d-none d-lg-block">
+            {{-- <form class="app-search d-none d-lg-block">
                 <div class="position-relative">
                     <input type="text" class="form-control" placeholder="Search...">
                     <button class="btn btn-primary" type="button"><i class="bx bx-search-alt align-middle"></i></button>
                 </div>
-            </form>
+            </form> --}}
         </div>
 
         <div class="d-flex">
@@ -65,15 +65,15 @@
             </div>
 .
             <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item noti-icon position-relative" id="page-header-notifications-dropdown"
-                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i data-feather="bell" class="icon-lg"></i>
+                {{-- <button type="button" class="btn header-item noti-icon position-relative" id="page-header-notifications-dropdown"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> --}}
+                    {{-- <i data-feather="bell" class="icon-lg"></i>
                     <span class="badge bg-danger rounded-pill">5</span>
-                </button>
+                </button> --}}
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                     aria-labelledby="page-header-notifications-dropdown">
                     <div class="p-3">
-                        <div class="row align-items-center">
+                        {{-- <div class="row align-items-center">
                             <div class="col">
                                 <h6 class="m-0"> Notifications </h6>
                             </div>
@@ -81,8 +81,8 @@
                                 <a href="#!" class="small text-reset text-decoration-underline"> Unread (3)</a>
                             </div>
                         </div>
-                    </div>
-                    <div data-simplebar style="max-height: 230px;">
+                    </div> --}}
+                    {{-- <div data-simplebar style="max-height: 230px;">
                         <a href="#!" class="text-reset notification-item">
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
@@ -96,8 +96,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                        <a href="#!" class="text-reset notification-item">
+                        </a> --}}
+                        {{-- <a href="#!" class="text-reset notification-item">
                             <div class="d-flex">
                                 <div class="flex-shrink-0 avatar-sm me-3">
                                     <span class="avatar-title bg-primary rounded-circle font-size-16">
@@ -144,7 +144,7 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> --}}
                     <div class="p-2 border-top d-grid">
                         <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
                             <i class="mdi mdi-arrow-right-circle me-1"></i> <span>View More..</span>
@@ -179,12 +179,14 @@
                         <i class="mdi mdi-lock font-size-16 align-middle me-1"></i> Change Password </a>
                     <div class="dropdown-divider"></div>
                     <!-- Updated Logout -->
-                    <form method="POST" action="{{ route('admin.logout') }}" style="display: inline;">
-                        @csrf
-                        <button type="submit" class="dropdown-item">
-                            <i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout
-                        </button>
-                    </form>
+                    <form method="POST" action="{{ route('admin.logout') }}">
+    @csrf
+    <button type="submit" class="dropdown-item">
+        Logout
+    </button>
+</form>
+
+
                 </div>
 
         </div>

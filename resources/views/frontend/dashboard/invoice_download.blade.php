@@ -51,11 +51,7 @@
           <h2 style="color: green; font-size: 26px;"><strong>EasyShop</strong></h2>
         </td>
         <td align="right">
-            <pre class="font" >
-               EasyShop Head Office
-               Email:support@easylearningbd.com <br>
-               Mob: 1245454545 <br>
-               Dhaka 1207,Dhanmondi:#4 <br>
+            <pre class="font" > <br>
 
             </pre>
         </td>

@@ -9,10 +9,11 @@
         <li class="menu-title" data-key="t-menu">Menu</li>
 
         <li>
-            <a href="route('dashboard')">
-                <i data-feather="home"></i>
-                <span data-key="t-dashboard">Dashboard</span>
-            </a>
+            <a href="{{ route('admin.dashboard') }}">
+    <i data-feather="home"></i>
+    <span data-key="t-dashboard">Dashboard</span>
+</a>
+
         </li>
 
         <li>
@@ -182,14 +183,14 @@
 
     </ul>
 
-    <div class="card sidebar-alert border-0 text-center mx-4 mb-0 mt-5">
+    {{-- <div class="card sidebar-alert border-0 text-center mx-4 mb-0 mt-5">
         <div class="card-body">
             <img src="assets/images/giftbox.png" alt="">
             <div class="mt-4">
                 <h5 class="alertcard-title font-size-16">Unlimited Access</h5>
                 <p class="font-size-13">Upgrade your plan from a Free trial, to select ‘Business Plan’.</p>
 
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

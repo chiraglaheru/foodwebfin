@@ -66,9 +66,9 @@
                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                 <label class="custom-control-label" for="customCheck1">Remember password</label>
             </div>
-            <button type="submit" class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Sing Up </button>
+            <button type="submit" class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Sign Up </button>
             <div class="text-center pt-3">
-                Don’t have an account? <a class="font-weight-bold" href="{{ route('register')}}">Sign Up</a>
+                Already have an account? <a class="font-weight-bold" href="{{ route('login')}}">Login</a>
             </div>
         </form>
                            {{-- <hr class="my-4">

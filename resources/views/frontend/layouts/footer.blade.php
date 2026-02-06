@@ -23,8 +23,8 @@
                    </div>
                 </div>
              </form>
-             <p><a class="text-info" href="register.html">Register now</a> to get updates on <a href="offers.html">Offers and Coupons</a></p>
-             <div class="app">
+             {{-- <p><a class="text-info" href="register.html">Register now</a> to get updates on <a href="offers.html">Offers and Coupons</a></p> --}}
+             {{-- <div class="app">
                 <p class="mb-2">DOWNLOAD APP</p>
                 <a href="#">
                 <img class="img-fluid" src="{{ asset('frontend/img/google.png') }}">
@@ -32,7 +32,7 @@
                 <a href="#">
                 <img class="img-fluid" src="{{ asset('frontend/img/apple.png')}}">
                 </a>
-             </div>
+             </div> --}}
           </div>
           <div class="col-md-1 col-sm-6 mobile-none">
           </div>

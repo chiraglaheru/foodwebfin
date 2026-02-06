@@ -3,10 +3,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <style>
-   /**
-   * The CSS shown here will not be introduced in the Quickstart guide, but shows
-   * how you can use CSS to style your Element's container.
-   */
    .StripeElement {
    box-sizing: border-box;
    height: 40px;
@@ -27,64 +23,78 @@
    .StripeElement--webkit-autofill {
    background-color: #fefde5 !important;}
 </style>
-<!-- /////////////////////////----------End CSS ------- ///////////////////////////// -->
 
+<script>
+function selectAddress(el){
+    document.querySelectorAll('.addresses-item').forEach(c=>{
+        c.classList.remove('border-success');
+        c.querySelector('.btn').classList.remove('btn-success');
+        c.querySelector('.btn').classList.add('btn-secondary');
+    });
+
+    el.classList.add('border-success');
+    el.querySelector('.btn').classList.remove('btn-secondary');
+    el.querySelector('.btn').classList.add('btn-success');
+}
+</script>
 
 <section class="offer-dedicated-body mt-4 mb-4 pt-2 pb-2">
-    <div class="container">
-       <div class="row">
-          <div class="col-md-8">
-             <div class="offer-dedicated-body-left">
+<div class="container">
+<div class="row">
+<div class="col-md-8">
+<div class="offer-dedicated-body-left">
 
-    @php
-    $id = Auth::user()->id;
-    $profileData = App\Models\User::find($id);
-    @endphp
+@php
+$id = Auth::user()->id;
+$profileData = App\Models\User::find($id);
+@endphp
 
+<div class="pt-2"></div>
+<div class="bg-white rounded shadow-sm p-4 mb-4">
+<h4 class="mb-1">Choose a delivery address</h4>
+<h6 class="mb-3 text-black-50">Multiple addresses in this location</h6>
 
-    <div class="pt-2"></div>
-    <div class="bg-white rounded shadow-sm p-4 mb-4">
-        <h4 class="mb-1">Choose a delivery address</h4>
-        <h6 class="mb-3 text-black-50">Multiple addresses in this location</h6>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="bg-white card addresses-item mb-4 border border-success">
-                <div class="gold-members p-4">
-                    <div class="media">
-                        <div class="mr-3"><i class="icofont-ui-home icofont-3x"></i></div>
-                        <div class="media-body">
-                            <h6 class="mb-1 text-black">Home</h6>
-                            <p class="text-black">
-                                {{ $profileData->address }}
-                            </p>
-                            <p class="mb-0 text-black font-weight-bold"><a class="btn btn-sm btn-success mr-2" href="#"> DELIVER HERE</a>
-                            <span>30MIN</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="bg-white card addresses-item mb-4">
-                <div class="gold-members p-4">
-                    <div class="media">
-                        <div class="mr-3"><i class="icofont-briefcase icofont-3x"></i></div>
-                        <div class="media-body">
-                            <h6 class="mb-1 text-secondary">Work</h6>
-                            <p>NCC, Model Town Rd Town, Ludhiana, Punjab 141002, India
-                            </p>
-                            <p class="mb-0 text-black font-weight-bold"><a class="btn btn-sm btn-secondary mr-2" href="#"> DELIVER HERE</a>
-                            <span>40MIN</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
+<div class="row">
+<div class="col-md-6">
+<div class="bg-white card addresses-item mb-4 border border-success"
+     onclick="selectAddress(this)">
+<div class="gold-members p-4">
+<div class="media">
+<div class="mr-3"><i class="icofont-ui-home icofont-3x"></i></div>
+<div class="media-body">
+<h6 class="mb-1 text-black">Home</h6>
+<p class="text-black">{{ $profileData->address }}</p>
+<p class="mb-0 text-black font-weight-bold">
+<a class="btn btn-sm btn-success mr-2" href="#"> DELIVER HERE</a>
+<span>30MIN</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-    </div>
+<div class="col-md-6">
+<div class="bg-white card addresses-item mb-4"
+     onclick="selectAddress(this)">
+<div class="gold-members p-4">
+<div class="media">
+<div class="mr-3"><i class="icofont-fast-food icofont-4x"></i></div>
+<div class="media-body">
+<h6 class="mb-1 text-secondary">Dine In</h6>
+<p>Current Store</p>
+<p class="mb-0 text-black font-weight-bold">
+<a class="btn btn-sm btn-secondary mr-2" href="#"> DELIVER HERE</a>
+<span>15MIN-20MIN</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
                 <div class="pt-2"></div>
     <div class="bg-white rounded shadow-sm p-4 osahan-payment">
         <h4 class="mb-1">Choose payment method</h4>
