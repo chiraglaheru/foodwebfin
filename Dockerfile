@@ -35,7 +35,17 @@ COPY . .
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-RUN composer install --no-dev --optimize-autoloader
+ENV COMPOSER_ALLOW_SUPERUSER=1
+
+RUN composer install \
+    --no-dev \
+    --prefer-dist \
+    --no-interaction \
+    --no-scripts \
+    --optimize-autoloader
+
+RUN php artisan key:generate --force || true
+RUN php artisan optimize || true
 
 RUN chown -R www-data:www-data storage bootstrap/cache
 
