@@ -48,7 +48,17 @@ RUN composer install \
     --optimize-autoloader
 
 # Laravel optimizations
-RUN php artisan optimize || true
+# Laravel runtime fix (no shell access workaround)
+RUN echo '#!/bin/sh\n\
+php artisan key:generate --force || true\n\
+php artisan config:clear || true\n\
+php artisan cache:clear || true\n\
+php artisan route:clear || true\n\
+php artisan view:clear || true\n\
+exec apache2-foreground' > /start.sh
+
+RUN chmod +x /start.sh
+
 
 RUN chown -R www-data:www-data storage bootstrap/cache
 
@@ -57,4 +67,5 @@ ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 RUN sed -ri 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf
 
 EXPOSE 80
-CMD ["apache2-foreground"]
+CMD ["/start.sh"]
+
