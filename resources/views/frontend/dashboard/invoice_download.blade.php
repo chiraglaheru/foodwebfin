@@ -118,7 +118,7 @@
   <table width="100%" style=" padding:0 10px 0 10px;">
     <tr>
         <td align="right" >
-            <h2><span style="color: green;">Subtotal:</span> Subtotal tk</h2>
+            <h2><span style="color: green;">Subtotal:</span> {{ $totalPrice }} </h2>
             <h2><span style="color: green;">Total:</span>
                 {{ $totalPrice }}</h2>
             {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}

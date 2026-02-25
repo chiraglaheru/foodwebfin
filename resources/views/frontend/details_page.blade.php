@@ -94,9 +94,9 @@ $coupons = App\Models\Coupon::where('client_id',$client->id)->where('status','1'
                     <img class="img-fluid" src="{{ asset($populer->image) }}">
                     <h6>{{ $populer->name }}</h6>
                     @if ($populer->discount_price == NULL)
-                        ${{$populer->price}}
+                        {{ currency($populer->price) }}
                     @else
-                    $<del>{{$populer->price}}</del> ${{$populer->discount_price}}
+                    <del>{{ currency($populer->price) }}</del> {{ currency($populer->discount_price) }}
                     @endif
                     <span class="float-right">
                      <a class="btn btn-outline-secondary btn-sm" href="{{ route('add_to_cart',$populer->id)}}">ADD</a>
@@ -130,14 +130,13 @@ $coupons = App\Models\Coupon::where('client_id',$client->id)->where('status','1'
             <div class="p-3 position-relative">
                 <div class="list-card-body">
                     <h6 class="mb-1"><a href="#" class="text-black">{{$bestseller->name}}</a></h6>
-                    {{-- <p class="text-gray mb-2">{{ $bestseller['city']['city_name'] }}</p> --}}
 
                     <p class="text-gray time mb-0">
                         @if ($bestseller->discount_price == NULL)
-                        <a class="btn btn-link btn-sm text-black" href="#">${{$bestseller->price}}  </a>
+                        <a class="btn btn-link btn-sm text-black" href="#">{{ currency($bestseller->price) }}</a>
                     @else
-                    $<del>{{$bestseller->price}}</del>
-                    <a class="btn btn-link btn-sm text-black" href="#">${{$bestseller->discount_price}}  </a>
+                    <del>{{ currency($bestseller->price) }}</del>
+                    <a class="btn btn-link btn-sm text-black" href="#">{{ currency($bestseller->discount_price) }}</a>
 
                     @endif
                         <span class="float-right">
@@ -168,7 +167,7 @@ $coupons = App\Models\Coupon::where('client_id',$client->id)->where('status','1'
                     <img class="mr-3 rounded-pill" src="{{ asset($product->image) }}" alt="Generic placeholder image">
                     <div class="media-body">
                     <h6 class="mb-1">{{$product->name}}</h6>
-                    <p class="text-gray mb-0">${{ $product->price }} ({{ $product->size ?? '' }} cm)</p>
+                    <p class="text-gray mb-0">{{ currency($product->price) }} ({{ $product->size ?? '' }} cm)</p>
 
                     </div>
                 </div>
@@ -452,12 +451,10 @@ $coupons = App\Models\Coupon::where('client_id',$client->id)->where('status','1'
                 <img class="img-fluid float-left mr-3" src="{{ asset('frontend/img/earn-score-icon.png') }}">
                 <h6 class="pt-0 text-primary mb-1 font-weight-bold">OFFER</h6>
 
-     {{-- <pre>{{ print_r(Session::get('coupon'), true) }}</pre> --}}
-
                 @if ($coupon == NULL)
                 <p class="mb-0">No Coupon is Available </p>
                 @else
-                <p class="mb-0">{{ $coupon->discount }}% off on orders above $99 | Use coupon <span class="text-danger font-weight-bold">{{ $coupon->coupon_name }}</span></p>
+                <p class="mb-0">{{ $coupon->discount }}% off on orders above ₹99 | Use coupon <span class="text-danger font-weight-bold">{{ $coupon->coupon_name }}</span></p>
                 @endif
 
                 <div class="icon-overlap">
@@ -479,7 +476,7 @@ $coupons = App\Models\Coupon::where('client_id',$client->id)->where('status','1'
       @endphp
 
    <div class="gold-members p-2 border-bottom">
-         <p class="text-gray mb-0 float-right ml-2">${{ $details['price'] * $details['quantity'] }}</p>
+         <p class="text-gray mb-0 float-right ml-2">{{ currency($details['price'] * $details['quantity']) }}</p>
          <span class="count-number float-right">
 
         <button class="btn btn-outline-secondary  btn-sm left dec" data-id="{{ $id }}" > <i class="icofont-minus"></i> </button>
@@ -514,21 +511,19 @@ $coupons = App\Models\Coupon::where('client_id',$client->id)->where('status','1'
 
       <p class="mb-1 text-success">Total Discount
          <span class="float-right text-success">
-
             @if (Session::has('coupon'))
-               ${{ $total - Session()->get('coupon')['discount_amount'] }}
+               {{ currency($total - Session()->get('coupon')['discount_amount']) }}
             @else
-            ${{ $total }}
+               {{ currency($total) }}
             @endif
-
          </span>
       </p>
       <hr />
       <h6 class="font-weight-bold mb-0">TO PAY  <span class="float-right">
       @if (Session::has('coupon'))
-      ${{ Session()->get('coupon')['discount_amount'] }}
+      {{ currency(Session()->get('coupon')['discount_amount']) }}
       @else
-      ${{ $total }}
+      {{ currency($total) }}
       @endif</span></h6>
    </div>
 
@@ -549,9 +544,9 @@ $coupons = App\Models\Coupon::where('client_id',$client->id)->where('status','1'
       <img class="img-fluid float-left" src="{{ asset('frontend/img/wallet-icon.png') }}">
       <h6 class="font-weight-bold text-right mb-2">Subtotal : <span class="text-danger">
          @if (Session::has('coupon'))
-         ${{ Session()->get('coupon')['discount_amount'] }}
+         {{ currency(Session()->get('coupon')['discount_amount']) }}
          @else
-         ${{ $total }}
+         {{ currency($total) }}
          @endif
       </span></h6>
       <p class="seven-color mb-1 text-right">Extra charges may apply</p>
@@ -664,7 +659,7 @@ function ApplyCoupon(){
         type: "POST",
         data: {
             _token: "{{ csrf_token() }}",
-            coupon: coupon   // ← FIXED
+            coupon: coupon
         },
         success: function(data){
             if(data.error){

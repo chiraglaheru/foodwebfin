@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light osahan-nav shadow-sm">
     <div class="container">
        <a class="navbar-brand" href="{{ route('index') }}"><img alt="logo" src="{{ asset('frontend/img/logo.png') }}"></a>
@@ -88,7 +87,7 @@
        $total += $details['price'] * $details['quantity']
     @endphp
 
-    <p class="mb-2"><i class="icofont-ui-press text-danger food-item"></i>{{ $details['name'] }} x {{  $details['quantity'] }}   <span class="float-right text-secondary">${{ $details['price'] * $details['quantity'] }}</span></p>
+    <p class="mb-2"><i class="icofont-ui-press text-danger food-item"></i>{{ $details['name'] }} x {{  $details['quantity'] }}   <span class="float-right text-secondary">{{ currency($details['price'] * $details['quantity']) }}</span></p>
     @endforeach
     @endif
 
@@ -96,9 +95,9 @@
     <div class="dropdown-cart-top-footer border-top p-4">
        <p class="mb-0 font-weight-bold text-secondary">Sub Total <span class="float-right text-dark">
           @if (Session::has('coupon'))
-          ${{ Session()->get('coupon')['discount_amount'] }}
+          {{ currency(Session()->get('coupon')['discount_amount']) }}
           @else
-          ${{ $total }}
+          {{ currency($total) }}
           @endif</span></p>
 
     </div>

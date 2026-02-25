@@ -30,10 +30,13 @@ class ManageOrderController extends Controller
         return view('admin.backend.order.processing_order',compact('allData'));
     }
     //End Method
-    public function DeliverdOrder(){
-        $allData = Order::where('status','deliverd')->orderBy('id','desc')->get();
-        return view('admin.backend.order.deliverd_order',compact('allData'));
-    }
+    public function DeliveredOrder(){
+    $allData = Order::where('status','delivered')
+        ->orderBy('id','desc')
+        ->get();
+
+    return view('admin.backend.order.delivered_order',compact('allData'));
+}
     //End Method
 
     public function AdminOrderDetails($id){
@@ -71,15 +74,16 @@ class ManageOrderController extends Controller
     }
     //End Method
 
-    public function ProcessingToDeliverd($id){
-        Order::find($id)->update(['status' => 'deliverd']);
-        $notification = array(
-            'message' => 'Order Processing Successfully',
-            'alert-type' => 'success'
-        );
+   public function ProcessingToDelivered($id){
+    Order::find($id)->update(['status' => 'delivered']);
 
-        return redirect()->route('deliverd.order')->with($notification);
-    }
+    $notification = [
+        'message' => 'Order Delivered Successfully',
+        'alert-type' => 'success'
+    ];
+
+    return redirect()->route('delivered.order')->with($notification);
+}
     //End Method
 
     public function AllClientOrders(){

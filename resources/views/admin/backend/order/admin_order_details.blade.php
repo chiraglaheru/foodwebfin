@@ -102,7 +102,7 @@
             </tr>
             <tr>
                 <th width="50%">Order Amount: </th>
-                <td>${{ $order->amount }}</td>
+                <td>{{ currency( $order->amount }}</td>
             </tr>
             <tr>
                 <th width="50%">Order Status: </th>
@@ -117,7 +117,7 @@
         @elseif ($order->status == 'confirm')
         <a href="{{ route('confirm_to_processing',$order->id) }}" class="btn btn-block btn-success" id="processingOrder">Processing Order</a>
         @elseif ($order->status == 'processing')
-        <a href="{{ route('processing_to_deliverd',$order->id) }}" class="btn btn-block btn-success" id="deliverdOrder">Deliverd Order</a>
+        <a href="{{ route('processing_to_delivered',$order->id) }}" class="btn btn-block btn-success" id="deliverdOrder">Deliverd Order</a>
         @endif
     </td>
 </tr>
@@ -197,7 +197,7 @@
         </td>
         <td class="col-md-2">
             <label>
-                {{ $item->price }} <br> Total = $ {{ $item->price * $item->qty }}
+                {{ $item->price }} <br> Total = ₹ {{ $item->price * $item->qty }}
             </label>
         </td>
     </tr>
@@ -205,7 +205,7 @@
                 </tbody>
             </table>
     <div>
-        <h4>Total Price: $ {{ $totalPrice }}</h4>
+        <h4>Total Price: ₹ {{ $totalPrice }}</h4>
     </div>
 
         </div>

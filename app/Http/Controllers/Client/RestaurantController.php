@@ -220,7 +220,7 @@ class RestaurantController extends Controller
         // $city = City::latest()->get();
         $menu = Menu::where('client_id', $clientId)->latest()->get();
         $product = Product::findOrFail($id);
-        return view('client.backend.menu.product.edit_product', compact('category', 'city', 'menu', 'product'));
+        return view('client.backend.menu.product.edit_product', compact('category', 'menu', 'product'));
     }
 
     public function UpdateProduct(Request $request)

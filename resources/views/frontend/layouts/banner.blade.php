@@ -33,7 +33,6 @@
 
                       <div class="col-lg-2 col-md-2 col-sm-12 form-group">
                          <a href="listing.html" class="btn btn-primary btn-block btn-lg btn-gradient">Search</a>
-                         <!--<button type="submit" class="btn btn-primary btn-block btn-lg btn-gradient">Search</button>-->
                       </div>
                    </div>
                 </form>
@@ -49,7 +48,7 @@
                       <a href="#">
                          <img class="img-fluid" src="{{ asset($product->image ) }}" alt="">
                          <h6>{{ Str::limit($product->name, 8)  }}</h6>
-                         <p>${{ $product->price }}</p>
+                         <p>{{ currency($product->price) }}</p>
                       </a>
                    </div>
                 </div>
@@ -73,22 +72,32 @@ function getUserLocation(event) {
         return;
     }
 
-    navigator.geolocation.getCurrentPosition(success, error);
+    document.getElementById("location-input").value = "Locating you...";
 
-    function success(position) {
+    navigator.geolocation.getCurrentPosition(function(position) {
         let lat = position.coords.latitude;
         let lng = position.coords.longitude;
 
-        // Insert located coordinates into the input field
-        document.getElementById("location-input").value = `Lat: ${lat}, Lng: ${lng}`;
+        fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=en`)
+            .then(function(response) { return response.json(); })
+            .then(function(data) {
+                let address = [
+                    data.locality,
+                    data.principalSubdivision,
+                    data.countryName
+                ].filter(Boolean).join(', ');
+                document.getElementById("location-input").value = address || "Location found";
+            })
+            .catch(function() {
+                document.getElementById("location-input").value = lat.toFixed(5) + ', ' + lng.toFixed(5);
+            });
 
-        // OPTIONAL: You can convert coordinates → address using Google Maps API
-        // But that requires a paid API key so skipping for now.
-    }
-
-    function error() {
-        alert("Unable to retrieve your location.");
-    }
+    }, function() {
+        document.getElementById("location-input").value = "";
+        alert("Please allow location access in your browser.");
+    }, {
+        timeout: 10000,
+        maximumAge: 60000
+    });
 }
 </script>
-

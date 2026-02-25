@@ -28,9 +28,11 @@
  <div class="card">
 <div class="card-body p-4">
 
-<form id="myForm" action="{{ route('coupon.update') }}" method="post" enctype="multipart/form-data">
+<form id="myForm" action="{{ route('menu.update') }}" method="post" enctype="multipart/form-data">
     @csrf
-        <input type="hidden" name="id" value="{{ $coupon->id }}" >
+    <input type="hidden" name="id" value="{{ $menu->id }}">
+    @csrf
+        {{-- <input type="hidden" name="id" value="{{ $coupon->id }}" > --}}
 
 <div class="row">
     <div class="col-lg-12">

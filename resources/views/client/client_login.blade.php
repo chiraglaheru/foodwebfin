@@ -126,15 +126,12 @@
                                             class="text-primary fw-semibold"> Signup now </a> </p>
                                 </div>
                             </div>
-<<<<<<< HEAD
                             {{-- <div class="mt-4 mt-md-5 text-center">
                                 <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> EasyLearing   . Crafted with <i class="mdi mdi-heart text-danger"></i> by EasyLearing</p>
                             </div> --}}
-=======
                             <div class="mt-4 mt-md-5 text-center">
-                                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> OshanaEat   . Crafted with <i class="mdi mdi-heart text-danger"></i> by Chirag</p>
+                                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> OshanaEat   . Crafted with <i class="mdi mdi-heart text-danger"></i> by Oshanaeat</p>
                             </div>
->>>>>>> updated fin changes
                         </div>
                     </div>
                 </div>
@@ -172,12 +169,12 @@
                     <div class="testi-contain text-white">
                         <i class="bx bxs-quote-alt-left text-success display-6"></i>
 
-<<<<<<< HEAD
+
                         <h4 class="mt-4 fw-medium lh-base text-white">“A great dining experience isn’t created by food alone — it’s crafted by the people who prepare it, the passion behind every detail, and the care in how it is delivered. When all of these come together, a simple meal becomes a memory.”
-=======
+
                         <h4 class="mt-4 fw-medium lh-base text-white">“Since using this platform, order handling and customer flow have improved significantly.
                             It’s simple and reliable”
->>>>>>> updated fin changes
+
                         </h4>
                         <div class="mt-4 pt-3 pb-5">
                             <div class="d-flex align-items-start">
@@ -187,11 +184,11 @@
                                 <div class="flex-grow-1 ms-3 mb-4">
                                     <h5 class="font-size-18 text-white">Richard Drews
                                     </h5>
-<<<<<<< HEAD
+
                                     <p class="mb-0 text-white-50">Culinary Expert</p>
-=======
+
                                     <p class="mb-0 text-white-50">Restaurant Partner</p>
->>>>>>> updated fin changes
+
                                 </div>
                             </div>
                         </div>
@@ -202,12 +199,11 @@
                     <div class="testi-contain text-white">
                         <i class="bx bxs-quote-alt-left text-success display-6"></i>
 
-<<<<<<< HEAD
+
                         <h4 class="mt-4 fw-medium lh-base text-white">“Behind every successful service lies a team that believes in consistency, quality, and heart. It’s not just about satisfying hunger — it’s about creating an experience that makes people feel valued, understood, and welcomed.”</h4>
-=======
                         <h4 class="mt-4 fw-medium lh-base text-white">“This ordering system reduced manual work and errors for our outlet.
                             It helps us serve customers better every day”</h4>
->>>>>>> updated fin changes
+
                         <div class="mt-4 pt-3 pb-5">
                             <div class="d-flex align-items-start">
                                 <div class="flex-shrink-0">
@@ -216,11 +212,11 @@
                                 <div class="flex-grow-1 ms-3 mb-4">
                                     <h5 class="font-size-18 text-white">Rosanna French
                                     </h5>
-<<<<<<< HEAD
+
                                     <p class="mb-0 text-white-50">Hospitality Head</p>
-=======
+
                                     <p class="mb-0 text-white-50">Food Vendor</p>
->>>>>>> updated fin changes
+
                                 </div>
                             </div>
                         </div>

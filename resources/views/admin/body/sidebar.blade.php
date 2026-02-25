@@ -132,7 +132,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('deliverd.order') }}">
+                    <a href="{{ route('delivered.order') }}">
                         <span data-key="t-calendar">Deliverd Orders </span>
                     </a>
                 </li>
